@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://localhost:8888/imovix/profil_modif.php -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./iMovix_files/style.css">
+    <script src="./iMovix_files/gsap.min.js"></script>
+
+    <title>iMovix</title>
+</head>
+
+<body>
+<header>
+    <ul class="menu">
+        <li class="link logo"><a href="http://localhost:8888/imovix/home.php">iMovix</a></li>
+        <div class="container_link">
+            <li class="link first_link"><a href="http://localhost:8888/imovix/overview.php">Overview</a></li>
+            <li class="link second_link"><a href="http://localhost:8888/imovix/overview.php">Overview</a></li>
+        </div>
+        <div class="container_link">
+            <li class="link first_link"><a href="http://localhost:8888/imovix/movies.php">Movies</a></li>
+            <li class="link second_link"><a href="http://localhost:8888/imovix/movies.php">Movies</a></li>
+        </div>
+        <div class="container_link">
+            <li class="link first_link"><a href="http://localhost:8888/imovix/list.php">My List</a></li>
+            <li class="link second_link"><a href="http://localhost:8888/imovix/list.php">My List</a></li>
+        </div>
+
+    </ul>
+
+
+    <ul class="log"><div class="container_link"><li class="link first_link"><a href="http://localhost:8888/imovix/profil.php">test</a></li><li class="link second_link"><a href="http://localhost:8888/imovix/profil.php">test</a></li></div><div class="container_link"><li class="link first_link"><a href="http://localhost:8888/imovix/deconnexion.php">Deconnexion</a></li><li class="link second_link_log"><a href="http://localhost:8888/imovix/deconnexion.php">Deconnexion</a></li></div>
+
+    <!--  <div class="burger">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+    </div> -->
+    <a href="http://localhost:8888/imovix/profil.php" class="photo_profil"><img class="photo_profil_img" src="./iMovix_files/wpspiderman.jpg" alt=""></a>
+</ul></header><section class="profil">
+
+    <form class="changement_profil" action="http://localhost:8888/imovix/profil_modif_verif.php" method="post">
+        <div class="changement_profil_pp">
+            <img class="pp_img" src="./iMovix_files/pp.svg" alt="">
+        </div>
+        <input type="text" name="prenom" value="">
+        <input type="text" name="nom" value="">
+        <input type="email" name="email" value="">
+        <input class="enregistrer" type="submit" value="Enregistrer">
+    </form>;
+
+    
+
+</section>
+
+<script src="./iMovix_files/app.js"></script>
+
+
+</body></html>
