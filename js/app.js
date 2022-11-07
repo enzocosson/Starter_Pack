@@ -1,15 +1,3 @@
-// function toggleMenu{
-// const burger = document.querySelector(".burger");
-// const line1 = document.querySelector(".line1");
-// const line2 = document.querySelector(".line2");
-// const line3 = document.querySelector(".line3");
-
-// burger.addEventListener('click', () => {
-
-// })
-
-// }
-
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 

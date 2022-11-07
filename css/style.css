@@ -1,6 +1,31 @@
 @font-face {
   font-family: "Onest";
-  src: url(../font/TTF/OnestRegular1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestThin1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestMedium1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestLight1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestExtraBold1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestBold1602-hint.ttf) format("ttf"), url(../font/WOFF/OnestBlack1602-hint.ttf) format("ttf") url(../font/WOFF/OnestRegular1602-hint.woff) format("woff"), url(../font/WOFF/OnestThin1602-hint.woff) format("woff"), url(../font/WOFF/OnestMedium1602-hint.woff) format("woff"), url(../font/WOFF/OnestLight1602-hint.woff) format("woff"), url(../font/WOFF/OnestExtraBold1602-hint.woff) format("woff"), url(../font/WOFF/OnestBold1602-hint.woff) format("woff"), url(../font/WOFF/OnestBlack1602-hint.woff) format("woff");
+  src: url(../font/TTF/OnestRegular1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestThin1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestMedium1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestLight1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestExtraBold1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestBold1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestBlack1602-hint.ttf) format("ttf")
+      url(../font/WOFF/OnestThin1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestMedium1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestLight1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestExtraBold1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestBold1602-hint.ttf) format("ttf"),
+    url(../font/WOFF/OnestBlack1602-hint.ttf) format("ttf")
+      url(../font/WOFF/OnestRegular1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestThin1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestMedium1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestLight1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestExtraBold1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestBold1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestBlack1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestThin1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestMedium1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestLight1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestExtraBold1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestBold1602-hint.woff) format("woff"),
+    url(../font/WOFF/OnestBlack1602-hint.woff) format("woff");
 }
 * {
   margin: 0;
@@ -139,7 +164,7 @@ header .photo_profil {
 }
 header .photo_profil .photo_profil_img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   fill: #ffc42c !important;
@@ -261,13 +286,13 @@ header .burger .line3 {
   left: 50%;
   transform: translate(-50%, -50%) scale(1.1);
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100vh;
   z-index: -3;
   filter: blur(10px);
   -webkit-animation: bg_wp_avatar 30s ease-in-out infinite;
-          animation: bg_wp_avatar 30s ease-in-out infinite;
+  animation: bg_wp_avatar 30s ease-in-out infinite;
 }
 @-webkit-keyframes bg_wp_avatar {
   0% {
@@ -440,7 +465,7 @@ header .burger .line3 {
   border-radius: 50px;
   color: var(--blanc);
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1764705882);
   transition: 0.3s ease-in-out;
 }
@@ -517,12 +542,12 @@ header .burger .line3 {
   width: 100vw;
   height: 100vh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-size: 100vw 100vh;
   background-position: center;
   filter: blur(10px);
   -webkit-animation: bg_wp_avatar 30s ease-in-out infinite;
-          animation: bg_wp_avatar 30s ease-in-out infinite;
+  animation: bg_wp_avatar 30s ease-in-out infinite;
 }
 @keyframes bg_wp_avatar {
   0% {
@@ -620,7 +645,7 @@ header .burger .line3 {
   flex-shrink: 0;
   line-height: 35vh;
   -webkit-animation: banner 15s linear infinite;
-          animation: banner 15s linear infinite;
+  animation: banner 15s linear infinite;
 }
 @-webkit-keyframes banner {
   from {
@@ -653,7 +678,7 @@ header .burger .line3 {
   flex-shrink: 0;
   line-height: 35vh;
   -webkit-animation: banner 15s linear infinite;
-          animation: banner 15s linear infinite;
+  animation: banner 15s linear infinite;
 }
 .main .info {
   display: flex;
@@ -702,7 +727,7 @@ header .burger .line3 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -778,7 +803,7 @@ header .burger .line3 {
   border-radius: 50px;
   color: var(--blanc);
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1764705882);
   transition: 0.3s ease-in-out;
 }
@@ -845,7 +870,7 @@ header .burger .line3 {
   align-items: center;
   justify-content: center;
   -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
   border: 3px solid transparent;
   transition: 200ms ease-in-out;
   box-shadow: 0px 0px 10px 5px rgba(255, 195, 44, 0);
@@ -884,7 +909,7 @@ header .burger .line3 {
   flex-direction: column;
   background-color: #ffc42c;
   -moz-columns: var(--blanc);
-       columns: var(--blanc);
+  columns: var(--blanc);
   border-radius: 20px;
 }
 .connexion form h1,
@@ -1012,7 +1037,7 @@ header .burger .line3 {
 }
 .profil .pp .pp_img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -1096,7 +1121,7 @@ header .burger .line3 {
 }
 .profil .changement_profil .changement_profil_pp .pp_img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -1182,11 +1207,11 @@ header .burger .line3 {
   width: 70%;
   text-align: center;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
-          clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
+  clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
   -webkit-animation: loaderTitre 0.5s ease-in-out 1 forwards;
-          animation: loaderTitre 0.5s ease-in-out 1 forwards;
+  animation: loaderTitre 0.5s ease-in-out 1 forwards;
   -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 @-webkit-keyframes loaderTitre {
   0% {
@@ -1211,7 +1236,7 @@ header .burger .line3 {
 .loader .loader_titre2 {
   color: var(--orange);
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
-          clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
 }
 .loader .loader_bienvenue,
 .loader .loader_bienvenue2 {
@@ -1226,11 +1251,11 @@ header .burger .line3 {
   text-align: center;
   opacity: 1;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
-          clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
+  clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
   -webkit-animation: loaderTitre2 0.5s ease-in-out 1 forwards;
-          animation: loaderTitre2 0.5s ease-in-out 1 forwards;
+  animation: loaderTitre2 0.5s ease-in-out 1 forwards;
   -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  animation-delay: 3.5s;
 }
 @-webkit-keyframes loaderTitre2 {
   0% {
@@ -1255,7 +1280,7 @@ header .burger .line3 {
 .loader .loader_bienvenue2 {
   color: var(--orange);
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
-          clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
 }
 .loader .loader_inconnu,
 .loader .loader_inconnu2 {
@@ -1270,11 +1295,11 @@ header .burger .line3 {
   text-align: center;
   opacity: 1;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
-          clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
+  clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
   -webkit-animation: loaderTitre3 0.5s ease-in-out 1 forwards;
-          animation: loaderTitre3 0.5s ease-in-out 1 forwards;
+  animation: loaderTitre3 0.5s ease-in-out 1 forwards;
   -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  animation-delay: 7s;
 }
 @-webkit-keyframes loaderTitre3 {
   0% {
@@ -1299,7 +1324,7 @@ header .burger .line3 {
 .loader .loader_inconnu2 {
   color: var(--orange);
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
-          clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
 }
 .loader .log {
   position: absolute;
@@ -1326,9 +1351,9 @@ header .burger .line3 {
   text-align: center;
   opacity: 0;
   -webkit-animation: loaderTitre4 0.5s ease-in-out 1 forwards;
-          animation: loaderTitre4 0.5s ease-in-out 1 forwards;
+  animation: loaderTitre4 0.5s ease-in-out 1 forwards;
   -webkit-animation-delay: 7.5s;
-          animation-delay: 7.5s;
+  animation-delay: 7.5s;
 }
 @-webkit-keyframes loaderTitre4 {
   0% {
@@ -1364,11 +1389,11 @@ header .burger .line3 {
   width: 80%;
   text-align: center;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
-          clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
+  clip-path: polygon(0 0, 100% 0, 100% 59%, 0 43%);
   -webkit-animation: loaderTitre 0.5s ease-in-out 1 forwards;
-          animation: loaderTitre 0.5s ease-in-out 1 forwards;
+  animation: loaderTitre 0.5s ease-in-out 1 forwards;
   -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  animation-delay: 5s;
 }
 @keyframes loaderTitre {
   0% {
@@ -1385,5 +1410,5 @@ header .burger .line3 {
 .loader .loader_titre_co2 {
   color: var(--orange);
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
-          clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
-}/*# sourceMappingURL=style.css.map */
+  clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 47%);
+} /*# sourceMappingURL=style.css.map */
