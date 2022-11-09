@@ -102,6 +102,7 @@ require 'menu.php';
         echo "<div class='letter'>p</div>";
         echo "<div class='letter'>a</div>";
         echo "<div class='letter'>s</div>";
+        echo "<div class='letter'>&nbsp</div>";
         echo "<div class='letter'>?</div>";
 
         echo "</div>";
@@ -130,6 +131,7 @@ require 'menu.php';
         echo "<div class='letter'>p</div>";
         echo "<div class='letter'>a</div>";
         echo "<div class='letter'>s</div>";
+        echo "<div class='letter'>&nbsp</div>";
         echo "<div class='letter'>?</div>";
 
         echo "</div>";

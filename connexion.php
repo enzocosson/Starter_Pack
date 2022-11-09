@@ -2,21 +2,16 @@
 require 'debut.php';
 require 'menu.php';
 ?>
-<div class="cont-bandes">
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-    <div class="bande"></div>
-</div>
-<div class="wipe-transition"></div>
-<section data-barba="container" class="connexion">
 
+<section data-barba="container" class="connexion">
+    <div class="cont-bandes">
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+    </div>
+    <div class="wipe-transition"></div>
 
     <form action="connexion_verif.php" method="post">
         <div class="menu_deroulant">

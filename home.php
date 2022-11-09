@@ -4,33 +4,10 @@ require 'menu.php';
 ?>
 
 <section data-barba="container" class="home">
-    <!-- <div class="distortion"></div>-->
-    <!-- gsap -->
-    <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>-->
-    <!-- three js -->
-    <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js" integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
 
-    <script src="./js/hover-effect.umd.js"></script>
-    <script>
-        new hoverEffect({
-            parent: document.querySelector('.distortion'),
-            intensity: 0.2,
-            image1: "./img/wpspiderman.jpg",
-            image2: "./img/bg_wp.jpg",
-            displacementImage: "./img/diss.png",
-            imageRatio: 380 / 300,
-
-        })
-    </script>
--->
 
 
     <div class="cont-bandes">
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
         <div class="bande"></div>
         <div class="bande"></div>
         <div class="bande"></div>
@@ -111,6 +88,6 @@ require 'menu.php';
 
 
 </section>
-
+<script src="./js/app.js"></script>
 <?php
 require 'fin.php';

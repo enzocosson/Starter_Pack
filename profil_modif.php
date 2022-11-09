@@ -1,21 +1,43 @@
 <?php
-session_start();
 require 'debut.php';
 require 'menu.php';
 
-?>
-<section class="profil">
 
-    <form class="changement_profil" action="profil_modif_verif.php" method="post">
-        <div class="changement_profil_pp">
-            <img class="pp_img" src="./img/pp/pp.svg" alt="">
+?>
+<section data-barba="container" class="profil">
+
+    <div class="cont-bandes">
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+    </div>
+
+
+
+    <?php
+    $co = connexionBD();
+    afficherModifProfil($co);
+    ?>
+
+    <div class="container_pp">
+        <div class="container_img">
+            <?php
+            afficherContainerPP($co);
+            ?>
         </div>
-        <input type="text" name="prenom" value="<?php echo $_SESSION['user_prenom'] ?>">
-        <input type="text" name="nom" value="<?php echo $_SESSION['user_nom'] ?>">
-        <input type="email" name="email" value="<?php echo $_SESSION['user_email'] ?>">
-        <input class="enregistrer" type="submit" value="Enregistrer">
-    </form>
+        <div class="container_fermer">
+            <button type="button" onclick="fermerPP()">Fermer</button>
+        </div>
+    </div>
+
+    <?php
+    deconnexionBD($co);
+    ?>
+
 </section>
+<script src="./js/afficherPP.js"></script>
 <?php
 require 'fin.php';
 ?>

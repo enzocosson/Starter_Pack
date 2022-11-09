@@ -22,7 +22,7 @@ barba.init({
 
         // TLAnim.to(wipe, { left: "0%", ease: "power2.out", duration: 0.5 });
 
-        await delay(1500);
+        await delay(800);
         done();
       },
       enter() {

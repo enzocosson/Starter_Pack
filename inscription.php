@@ -2,8 +2,14 @@
 require 'debut.php';
 require 'menu.php';
 ?>
-<section class="inscription">
-
+<section data-barba="container" class="inscription">
+    <div class="cont-bandes">
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+        <div class="bande"></div>
+    </div>
     <form action="inscription_verif.php" method="post">
         <div class="menu_deroulant">
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

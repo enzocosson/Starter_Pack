@@ -1,6 +1,9 @@
 </body>
-<script src="./js/app.js"></script>
-<script src="./js/transition.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<!-- <script src="./js/transition.js"></script> -->
+
+
 
 
 </html>
