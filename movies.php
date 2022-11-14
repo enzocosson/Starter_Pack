@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'debut.php';
 require 'menu.php';
 ?>
@@ -23,7 +22,7 @@ require 'menu.php';
         })
     </script>
 
-    <video class="interstellar_ba" controls autoplay loop>
+    <video class="interstellar_ba" controls autoplay loop muted>
         <source src="./video/interstellar_ba.mp4" type="video/mp4">
     </video>
 
@@ -43,17 +42,153 @@ require 'menu.php';
             <a class="muteBtn">
                 <img class="noMuted" src="./img/picto/noMuted.svg" alt="">
                 <img class="muted" src="./img/picto/Muted.svg" alt="">
-
             </a>
         </div>
     </div>
 
+</section>
+
+
+<?php
+$co = connexionBD();
+?>
+<section class="affichageMovie">
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Top Tendance :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            afficherMoviesTendance($co);
+            ?>
+        </div>
+
+        <?php
+        $_SESSION['idMovie'];
+        ?>
+
+    </div>
+
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Action :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            afficherMoviesAction($co);
+            ?>
+        </div>
+
+        <?php
+        $_SESSION['idMovie'];
+        ?>
+
+    </div>
+
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Aventure :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            afficherMoviesAventure($co);
+            ?>
+        </div>
+
+        <?php
+        $_SESSION['idMovie'];
+        ?>
+
+    </div>
+
+
+
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Thriller :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            afficherMoviesThriller($co);
+            ?>
+        </div>
+
+        <?php
+        $_SESSION['idMovie'];
+        ?>
+    </div>
+
+
+
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Romance :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            afficherMoviesRomance($co);
+            ?>
+        </div>
+
+        <?php
+        $_SESSION['idMovie'];
+        ?>
+    </div>
+
 
 </section>
-<section class="movie_test">
 
-</section>
-<script src="./js/mutedFuction.js"></script>
+
+
+
+<!-- <section class="affichageMovie">
+    <div class="container_genre">
+        <div class="titre_genre">
+            <h1>Top Tendance :</h1>
+        </div>
+
+        <div class="carrousel_genre">
+            <?php
+            // afficherMovies($co);
+            ?>
+        </div>
+
+        <div class="hoverInfo">
+
+            <div class="hoverInfo_descr">
+                <h1>Avengers : Endgame</h1>
+                <h2><span>Genre : </span> Action, Science-Fiction</h2>
+                <h2><span>Distribution : </span> Robert Downey Jr, Chris Evans, Chris Hemsworth...</h2>
+                <p>Le Titan Thanos, ayant réussi à s'approprier les six Pierres d'Infinité et à les réunir sur le Gantelet doré, a pu réaliser son objectif de pulvériser la moitié de la population de l'Univers. Cinq ans plus tard, Scott Lang, alias Ant-Man, parvient à s'échapper de la dimension subatomique où il était coincé. Il propose aux Avengers une solution pour faire revenir à la vie tous les êtres disparus, dont leurs alliés et coéquipiers : récupérer les Pierres d'Infinité dans le passé.</p>
+                <div class="interaction">
+                    <a class="play" href="">PLAY</a>
+                    <a class="more" href=""> <img class="plus" src="./img/picto/+.svg" alt=""> </a>
+                    <a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="hoverInfo_video">
+                <a class="muteBtn">
+                    <img class="noMuted" src="./img/picto/noMuted.svg" alt="">
+                    <img class="muted" src="./img/picto/Muted.svg" alt="">
+                </a>
+                <video class="avengersEndgame_ba" autoplay loop muted>
+                    <source src="./video/avengersEndgame_ba.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+        </div>
+    </div>
+</section> -->
+
+<script src="./js/hoverInfoMovie.js"></script>
+
 <?php
 require 'fin.php';
 ?>

@@ -15,6 +15,7 @@ if ($ligne_resultat > 0) {
     $ligne = $resultat->fetch(PDO::FETCH_ASSOC);
 
     if ($mdp == $ligne['user_mdp']) {
+        $_SESSION['user_photo'] = $ligne['user_photo'];
         $_SESSION['user_prenom'] = $ligne['user_prenom'];
         $_SESSION['user_numero'] = $ligne['user_code'];
         $_SESSION['user_nom'] = $ligne['user_nom'];

@@ -2,7 +2,12 @@
 require 'debut.php';
 require 'menu.php';
 
-$photo;
+if (empty($_SESSION['user_photo'])) {
+    $photo = 'default.svg';
+} else {
+    $photo = $_SESSION['user_photo'];
+}
+echo $photo;
 $prenom = $_POST['prenom'];
 $nom = $_POST['nom'];
 $email = $_POST['email'];
@@ -14,7 +19,7 @@ $co = connexionBD();
 
 <section class="modif_page">
     <?php
-    modifierProfil($co, $prenom, $nom, $email, $id);
+    modifierProfil($co, $photo, $prenom, $nom, $email, $id);
     ?>
 </section>
 

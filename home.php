@@ -14,7 +14,7 @@ require 'menu.php';
         <div class="bande"></div>
         <div class="bande"></div>
     </div>
-    <div class="wipe-transition"></div>
+    <!-- <div class="wipe-transition"></div> -->
 
 
     <img class="bg_wp_avatar" src="./img/bg_wp_avatar.png" alt="">

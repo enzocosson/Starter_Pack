@@ -1642,13 +1642,299 @@ header {
     }
   }
 }
-.movie_test {
+
+.affichageMovie {
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: auto;
   display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  padding: 5vw;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--noir);
+
+  .container_genre {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 95%;
+    transition: 0.3s ease-in-out;
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, #313131);
+      z-index: 1;
+    }
+
+    .titre_genre {
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      h1 {
+        font-size: 2vw;
+        color: var(--blanc);
+        font-weight: 500;
+      }
+    }
+
+    .carrousel_genre {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      z-index: 10;
+      transition: 0.3s ease-in-out;
+
+      .carrousel_genre_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .carrousel_affiche {
+          cursor: pointer;
+          position: relative;
+          width: 250px;
+          height: 360px;
+          margin-right: 20px;
+          overflow: hidden;
+          flex-shrink: 0;
+          border: 3px solid transparent;
+          transition: 0.3s ease-in-out;
+          box-shadow: 0px 0px 69px -41px rgba(255, 195, 44, 0);
+
+          &:hover {
+            border: 3px solid var(--orange);
+            box-shadow: 0px 0px 69px -41px rgba(255, 195, 44, 0.699);
+          }
+
+          img {
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 357px;
+          }
+        }
+
+        .hoverInfo {
+          pointer-events: none;
+          position: absolute;
+          top: 373px;
+          left: 0px;
+          width: 100%;
+          height: 0px;
+          background-color: var(--orange);
+          opacity: 0;
+          transition: 0.3s ease-in-out;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+
+          .hoverInfo_descr {
+            width: 45%;
+            height: 100%;
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+
+            h1 {
+              margin-bottom: 0.5vh;
+              font-family: "Onest";
+              font-weight: 800;
+              font-size: 45px;
+              color: var(--noir);
+            }
+
+            h2 {
+              margin-bottom: 0.5vh;
+              font-family: "Onest";
+              font-weight: 400;
+              font-size: 19px;
+              color: var(--noir);
+              span {
+                font-weight: 700;
+              }
+            }
+            p {
+              margin-top: 2vh;
+              margin-bottom: 2.5vh;
+              font-family: "Onest";
+              font-weight: 400;
+              font-size: 15px;
+              color: var(--noir);
+              text-align: justify;
+            }
+
+            .interaction {
+              height: 40px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .play {
+                width: 250px;
+                height: 100%;
+                font-size: 20px;
+                background-color: #313131;
+                border-radius: 50vw;
+                border: 3px solid var(--noir);
+                color: var(--orange);
+                transition: 0.3s ease-in-out;
+                margin-right: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                  background-color: var(--orange);
+                  border: 3px solid var(--noir);
+                  color: var(--noir);
+                }
+              }
+              .more {
+                width: 40px;
+                height: 100%;
+                border-radius: 50%;
+                border: 3px solid var(--noir);
+                color: var(--noir);
+                margin-right: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .plus {
+                  width: 40%;
+                }
+                .good {
+                  width: 70%;
+                }
+              }
+            }
+          }
+
+          .hoverInfo_video {
+            position: relative;
+            width: 55%;
+            height: 100%;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: start;
+            align-items: flex-end;
+            padding: 20px;
+
+            .muteBtn {
+              cursor: pointer;
+              position: relative;
+              width: 2vw;
+              height: 2vw;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              z-index: 10;
+
+              .noMuted,
+              .muted {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                transition: 0.2s ease-in-out;
+              }
+              .muted {
+                left: 38%;
+                opacity: 0;
+              }
+              .noMuted {
+                left: 38%;
+                opacity: 1;
+              }
+              .muted_active {
+                opacity: 1;
+              }
+              .noMuted_active {
+                opacity: 0;
+              }
+            }
+
+            .avengersEndgame_ba {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 108%;
+              height: 135%;
+              object-fit: cover;
+            }
+          }
+        }
+        .hoverInfo_active {
+          position: absolute;
+          top: 366px;
+          width: 100%;
+          pointer-events: initial;
+          height: 400px;
+          background-color: var(--orange);
+          opacity: 1;
+        }
+      }
+    }
+    .carrousel_genre_active {
+      height: 780px;
+    }
+  }
+}
+
+.myList {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--noir);
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 }
