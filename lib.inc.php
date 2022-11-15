@@ -57,52 +57,47 @@ function afficherContainerPP($co)
     }
 }
 function afficherModifProfil($co)
+
 {
     $userPhoto = $_GET['user_photo'];
-    $_SESSION['user_photo'] = $userPhoto;
-    $req = "SELECT * FROM imovix_users";
+    $_SESSION['photo'] = $userPhoto;
 
+    // echo $_SESSION['photo'];
+    // echo $_SESSION['user_photo'];
+
+    $req = 'SELECT * FROM imovix_users WHERE user_code=  ' . $_SESSION["user_numero"] . ' ';
     $resultat = $co->query($req);
-    foreach ($resultat as $value) {
-        if (!empty($_SESSION['user_photo'])) {
-            if (empty($userPhoto)) {
-                echo '<form class="changement_profil" action="profil_modif_verif.php" method="post">';
-                echo     '<button type="button" class="changement_profil_pp" onclick="afficherPP()">';
-                echo      ' <img class="pp_img" src="./img/pp/default.svg" alt="">';
-                echo     '</button>';
+    foreach ($resultat as $values) {
 
-                echo     '<input type="text" name="prenom" value="' . $value['user_prenom'] . '">';
-                echo     '<input type="text" name="nom" value="' . $value['user_nom'] . '">';
-                echo     '<input type="email" name="email" value="' . $value['user_email'] . '">';
-                echo     '<input class="enregistrer" type="submit" value="Enregistrer">';
-                echo '</form>';
-            } else {
-                echo '<form class="changement_profil" action="profil_modif_verif.php" method="post">';
-                echo     '<button type="button" class="changement_profil_pp" onclick="afficherPP()">';
-                echo      ' <img class="pp_img" src="./img/pp/' . $userPhoto . '" alt="">';
+        if (!empty($_SESSION['photo'])) {
 
-                echo     '</button>';
-
-                echo     '<input type="text" name="prenom" value="' . $value['user_prenom'] . '">';
-                echo     '<input type="text" name="nom" value="' . $value['user_nom'] . '">';
-                echo     '<input type="email" name="email" value="' . $value['user_email'] . '">';
-                echo     '<input class="enregistrer" type="submit" value="Enregistrer">';
-                echo '</form>';
-            }
-        } else {
             echo '<form class="changement_profil" action="profil_modif_verif.php" method="post">';
             echo     '<button type="button" class="changement_profil_pp" onclick="afficherPP()">';
-            echo      ' <img class="pp_img" src="./img/pp/' . $value['user_photo'] . '" alt="">';
+            echo      ' <img class="pp_img" src="./img/pp/' . $userPhoto . '" alt="">';
+
             echo     '</button>';
 
-            echo     '<input type="text" name="prenom" value="' . $value['user_prenom'] . '">';
-            echo     '<input type="text" name="nom" value="' . $value['user_nom'] . '">';
-            echo     '<input type="email" name="email" value="' . $value['user_email'] . '">';
+            echo     '<input type="text" name="prenom" value="' . $values['user_prenom'] . '">';
+            echo     '<input type="text" name="nom" value="' . $values['user_nom'] . '">';
+            echo     '<input type="email" name="email" value="' . $values['user_email'] . '">';
+            echo     '<input class="enregistrer" type="submit" value="Enregistrer">';
+            echo '</form>';
+        } else {
+
+            echo '<form class="changement_profil" action="profil_modif_verif.php" method="post">';
+            echo     '<button type="button" class="changement_profil_pp" onclick="afficherPP()">';
+            echo      ' <img class="pp_img" src="./img/pp/' . $values['user_photo'] . '" alt="">';
+            echo     '</button>';
+
+            echo     '<input type="text" name="prenom" value="' . $values['user_prenom'] . '">';
+            echo     '<input type="text" name="nom" value="' . $values['user_nom'] . '">';
+            echo     '<input type="email" name="email" value="' . $values['user_email'] . '">';
             echo     '<input class="enregistrer" type="submit" value="Enregistrer">';
             echo '</form>';
         }
     }
 }
+
 
 function modifierProfil($co, $photo, $prenom, $nom, $email, $id)
 {
@@ -124,13 +119,13 @@ function modifierProfil($co, $photo, $prenom, $nom, $email, $id)
 function afficherProfil($co)
 {
     $id = $_SESSION["user_numero"];
-    $req = "SELECT * FROM imovix_users WHERE user_code=$id";
-    echo $req;
-    $resultat = $co->query($req);
-    foreach ($resultat as $value) {
-        if (!empty($_SESSION['user_prenom'])) {
+
+    if (!empty($_SESSION['user_prenom'])) {
+        $req = "SELECT * FROM imovix_users WHERE user_code=$id";
+        // echo $req;
+        $resultat = $co->query($req);
+        foreach ($resultat as $value) {
             echo    '<h1>' . $value['user_prenom'] . '</h1>';
-            echo $req;
             echo    '<div class="pp">';
             echo       '<img class="pp_img" src="./img/pp/' . $value['user_photo'] . '" alt="">';
             echo  ' </div>';
@@ -139,13 +134,13 @@ function afficherProfil($co)
             echo   '<a href="profil_modif.php" class="profil_container modif">';
             echo       '<h4>Modifier mon profil</h4>';
             echo   '</a>';
-        } else {
-            echo "<h1 class='h1_erreur_profil'>Vous devez vous connectez pour acceder a votre profil</h1>";
-            echo "<div class='log'>";
-            echo "<a class='btnConnexion' href='connexion.php'>Se connecter</a>";
-            echo "<a class='btnInscription' href='inscription.php'>S'inscrire</a>";
-            echo "</div>";
         }
+    } else {
+        echo "<h1 class='h1_erreur_profil'>Vous devez vous connectez pour acceder a votre profil</h1>";
+        echo "<div class='log'>";
+        echo "<a class='btnConnexion' href='connexion.php'>Se connecter</a>";
+        echo "<a class='btnInscription' href='inscription.php'>S'inscrire</a>";
+        echo "</div>";
     }
 }
 
@@ -153,16 +148,22 @@ function afficherProfil($co)
 function afficherProfilNav($co)
 {
 
-    if (!empty($_SESSION['user_prenom'])) {
-        echo '<ul class="log">';
-        echo '<div class="container_link">';
-        echo '<li class="link first_link"><a href="profil.php">' . $_SESSION['user_prenom'] . '</a></li>';
-        echo '<li class="link second_link"><a href="profil.php">' . $_SESSION['user_prenom'] . '</a></li>';
-        echo  '</div>';
-        echo  '<div class="container_link">';
-        echo '<li class="link first_link"><a href="deconnexion.php">Deconnexion</a></li>';
-        echo '<li class="link second_link_log"><a href="deconnexion.php">Deconnexion</a></li>';
-        echo '</div>';
+
+    if (!empty($_SESSION['user_numero'])) {
+
+        $req = 'SELECT * FROM imovix_users WHERE user_code=  ' . $_SESSION["user_numero"] . ' ';
+        $resultat = $co->query($req);
+        foreach ($resultat as $values) {
+            echo '<ul class="log">';
+            echo '<div class="container_link">';
+            echo '<li class="link first_link"><a href="profil.php">' . $values['user_prenom'] . '</a></li>';
+            echo '<li class="link second_link"><a href="profil.php">' . $values['user_prenom'] . '</a></li>';
+            echo  '</div>';
+            echo  '<div class="container_link">';
+            echo '<li class="link first_link"><a href="deconnexion.php">Deconnexion</a></li>';
+            echo '<li class="link second_link_log"><a href="deconnexion.php">Deconnexion</a></li>';
+            echo '</div>';
+        }
     } else {
         echo '<ul class="log">';
         echo '<div class="container_link">';
@@ -177,11 +178,15 @@ function afficherProfilNav($co)
 
 
 
-    if (!empty($_SESSION['user_prenom'])) {
-        echo '<a href="profil.php" class="photo_profil">';
-        echo '<img class="photo_profil_img" src="./img/pp/' . $_SESSION['user_photo'] . '" alt="">';
-        echo '</a>';
-        echo '</ul>';
+    if (!empty($_SESSION['user_numero'])) {
+        $req = 'SELECT * FROM imovix_users WHERE user_code=  ' . $_SESSION["user_numero"] . ' ';
+        $resultat = $co->query($req);
+        foreach ($resultat as $values) {
+            echo '<a href="profil.php" class="photo_profil">';
+            echo '<img class="photo_profil_img" src="./img/pp/' . $values['user_photo'] . '" alt="">';
+            echo '</a>';
+            echo '</ul>';
+        }
     } else {
         echo '<a href="profil.php" class="photo_profil">';
         echo '<img class="photo_profil_img" src="./img/pp/default.svg" alt="">';

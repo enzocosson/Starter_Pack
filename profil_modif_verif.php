@@ -2,12 +2,18 @@
 require 'debut.php';
 require 'menu.php';
 
-if (empty($_SESSION['user_photo'])) {
-    $photo = 'default.svg';
-} else {
+
+
+
+
+if (empty($_SESSION['photo'])) {
     $photo = $_SESSION['user_photo'];
+} else {
+    $photo = $_SESSION['photo'];
 }
-echo $photo;
+
+
+// echo $photo;
 $prenom = $_POST['prenom'];
 $nom = $_POST['nom'];
 $email = $_POST['email'];

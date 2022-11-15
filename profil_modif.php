@@ -17,6 +17,7 @@ require 'menu.php';
 
 
     <?php
+    // echo $_SESSION['user_photo'];
     $co = connexionBD();
     afficherModifProfil($co);
     ?>
