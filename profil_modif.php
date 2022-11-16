@@ -6,15 +6,6 @@ require 'menu.php';
 ?>
 <section data-barba="container" class="profil">
 
-    <div class="cont-bandes">
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
-        <div class="bande"></div>
-    </div>
-
-
 
     <?php
     // echo $_SESSION['user_photo'];

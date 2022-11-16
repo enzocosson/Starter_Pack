@@ -22,8 +22,8 @@ function deconnexionBD(&$mabd)
 
 function inscription($co, $prenom, $nom, $email, $mdp)
 {
-    $req = 'INSERT INTO imovix_users (user_code, user_photo, user_prenom, user_nom, user_email, user_mdp) 
-    VALUES (NULL, "default.svg","' . $prenom . '","' . $nom . '","' . $email . '","' . $mdp . '")';
+    $req = 'INSERT INTO imovix_users (user_code, user_photo, user_prenom, user_nom, user_email, user_mdp, user_list1, user_list2, user_list3, user_list4, user_list5) 
+    VALUES (NULL, "default.svg","' . $prenom . '","' . $nom . '","' . $email . '","' . $mdp . '", "0", "0", "0", "0", "0")';
     echo $req;
     try {
         $resultat = $co->query($req);
@@ -208,7 +208,19 @@ function afficherMoviesTendance($co)
         echo '<div class="carrousel_genre_container">';
 
         echo '<div class="carrousel_affiche">';
-        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        // echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""> <img class="good_black" src="./img/picto/thumbUp_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
         echo '</div>';
 
 
@@ -221,11 +233,6 @@ function afficherMoviesTendance($co)
         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
         echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '<div class="interaction">';
-        echo '<a class="play" href="">PLAY</a>';
-        echo '<a class="more" href=""> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-        echo '</div>';
         echo '</div>';
 
         echo '<div class="hoverInfo_video">';
@@ -249,8 +256,38 @@ function afficherMoviesAction($co)
     $resultat = $co->query($req);
     foreach ($resultat as $value) {
         echo '<div class="carrousel_genre_container">';
+
         echo '<div class="carrousel_affiche">';
-        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '</div>';
+
+
+
+
+        echo '<div class="hoverInfo">';
+
+        echo '<div class="hoverInfo_descr">';
+        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+        echo '<p>' . $value['movie_descr'] . '</p>';
+        echo '<div class="interaction">';
+        echo '<a class="play" href="">PLAY</a>';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
+        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
+        echo '</div>';
+        echo '</div>';
+
+        echo '<div class="hoverInfo_video">';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
         echo '</div>';
         echo '</div>';
         $_SESSION['idMovie'] = $value['id'];
@@ -267,10 +304,40 @@ function afficherMoviesAventure($co)
     foreach ($resultat as $value) {
 
         echo '<div class="carrousel_genre_container">';
+
         echo '<div class="carrousel_affiche">';
-        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
         echo '</div>';
-        echo '</div>';;
+
+
+
+
+        echo '<div class="hoverInfo">';
+
+        echo '<div class="hoverInfo_descr">';
+        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+        echo '<p>' . $value['movie_descr'] . '</p>';
+        echo '<div class="interaction">';
+        echo '<a class="play" href="">PLAY</a>';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
+        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
+        echo '</div>';
+        echo '</div>';
+
+        echo '<div class="hoverInfo_video">';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
+        echo '</div>';
+        echo '</div>';
         $_SESSION['idMovie'] = $value['id'];
     }
 }
@@ -283,8 +350,38 @@ function afficherMoviesThriller($co)
     foreach ($resultat as $value) {
 
         echo '<div class="carrousel_genre_container">';
+
         echo '<div class="carrousel_affiche">';
-        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '</div>';
+
+
+
+
+        echo '<div class="hoverInfo">';
+
+        echo '<div class="hoverInfo_descr">';
+        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+        echo '<p>' . $value['movie_descr'] . '</p>';
+        echo '<div class="interaction">';
+        echo '<a class="play" href="">PLAY</a>';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
+        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
+        echo '</div>';
+        echo '</div>';
+
+        echo '<div class="hoverInfo_video">';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
         echo '</div>';
         echo '</div>';
         $_SESSION['idMovie'] = $value['id'];
@@ -299,8 +396,38 @@ function afficherMoviesRomance($co)
     foreach ($resultat as $value) {
 
         echo '<div class="carrousel_genre_container">';
+
         echo '<div class="carrousel_affiche">';
-        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img  class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '</div>';
+
+
+
+
+        echo '<div class="hoverInfo">';
+
+        echo '<div class="hoverInfo_descr">';
+        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+        echo '<p>' . $value['movie_descr'] . '</p>';
+        echo '<div class="interaction">';
+        echo '<a class="play" href="">PLAY</a>';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
+        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
+        echo '</div>';
+        echo '</div>';
+
+        echo '<div class="hoverInfo_video">';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
         echo '</div>';
         echo '</div>';
     }
@@ -308,42 +435,108 @@ function afficherMoviesRomance($co)
 
 
 
+function ajoutMovieList($co)
+{
+    $id = $_GET['id'];
+    $code = $_SESSION['user_numero'];
+    $req = 'SELECT * FROM imovix_users WHERE user_code= ' . $_SESSION["user_numero"] . ' ';
+    $resultat_user_list = $co->query($req);
+    foreach ($resultat_user_list as $values) {
+        if ($id == $values['user_list1'] || $id == $values['user_list2'] || $id == $values['user_list3'] || $id == $values['user_list4'] || $id == $values['user_list5']) {
+            echo '<h1>Ce film est deja dans votre liste</h1>';
+        } else {
+            if ($values['user_list1'] == 0) {
+                $req = "UPDATE imovix_users SET user_list1=$id WHERE user_code= $code ";
+                try {
+                    $resultat = $co->query($req);
+                } catch (PDOException $e) {
+                    print 'Erreur : ' . $e->getMessage() . '<br />';
+                }
+
+                if ($resultat->rowCount() == 1) {
+                    echo '<h1>Votre profil à bien été modifié</h1>';
+                    header('Refresh:5 ; URL=movies.php');
+                } else {
+                    echo '<h1>Une erreur est survenu lors de la modification</h1>';
+                }
+            } elseif ($values['user_list2'] == 0) {
+                $req = "UPDATE imovix_users SET user_list2=$id WHERE user_code= $code ";
+                try {
+                    $resultat = $co->query($req);
+                } catch (PDOException $e) {
+                    print 'Erreur : ' . $e->getMessage() . '<br />';
+                }
+
+                if ($resultat->rowCount() == 1) {
+                    echo '<h1>Votre profil à bien été modifié</h1>';
+                    header('Refresh:5 ; URL=movies.php');
+                } else {
+                    echo '<h1>Une erreur est survenu lors de la modification</h1>';
+                }
+            } elseif ($values['user_list3'] == 0) {
+                $req = "UPDATE imovix_users SET user_list3=$id WHERE user_code= $code ";
+                try {
+                    $resultat = $co->query($req);
+                } catch (PDOException $e) {
+                    print 'Erreur : ' . $e->getMessage() . '<br />';
+                }
+
+                if ($resultat->rowCount() == 1) {
+                    echo '<h1>Votre profil à bien été modifié</h1>';
+                    header('Refresh:5 ; URL=movies.php');
+                } else {
+                    echo '<h1>Une erreur est survenu lors de la modification</h1>';
+                }
+            } elseif ($values['user_list4'] == 0) {
+                $req = "UPDATE imovix_users SET user_list4=$id WHERE user_code= $code ";
+                try {
+                    $resultat = $co->query($req);
+                } catch (PDOException $e) {
+                    print 'Erreur : ' . $e->getMessage() . '<br />';
+                }
+
+                if ($resultat->rowCount() == 1) {
+                    echo '<h1>Votre profil à bien été modifié</h1>';
+                    header('Refresh:5 ; URL=movies.php');
+                } else {
+                    echo '<h1>Une erreur est survenu lors de la modification</h1>';
+                }
+            } elseif ($values['user_list5'] == 0) {
+                $req = "UPDATE imovix_users SET user_list5=$id WHERE user_code= $code ";
+                try {
+                    $resultat = $co->query($req);
+                } catch (PDOException $e) {
+                    print 'Erreur : ' . $e->getMessage() . '<br />';
+                }
+
+                if ($resultat->rowCount() == 1) {
+                    echo '<h1>Votre profil à bien été modifié</h1>';
+                    header('Refresh:1 ; URL=movies.php');
+                } else {
+                    echo '<h1>Une erreur est survenu lors de la modification</h1>';
+                }
+            } else {
+                echo '<h1>Vous avez atteind le nombre maximum de film dans votre liste.</h1>';
+            }
+        }
+    }
+}
 
 
 
-// function afficherHoverEffect($co)
-// {
-//     $idMovie = $_SESSION['idMovie'];
-//     $req = "SELECT * FROM imovix_movies WHERE id =  $idMovie ";
-//     // echo $req;
-//     $resultat = $co->query($req);
-//     foreach ($resultat as $value) {
 
-//         echo '<div class="hoverInfo">';
+function myList($co)
+{
+    $userId = $_SESSION["user_numero"];
+    $req = "SELECT * FROM `imovix_movies` WHERE id=( SELECT user_list1 FROM imovix_users WHERE user_code=$userId ) OR id=( SELECT user_list2 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list3 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list4 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list5 FROM imovix_users WHERE user_code=$userId);";
+    echo $req;
+    try {
+        $resultat = $co->query($req);
+    } catch (PDOException $e) {
+        print 'Erreur : ' . $e->getMessage() . '<br />';
+    }
 
-//         echo '<div class="hoverInfo_descr">';
-//         echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
-//         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
-//         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
-//         echo '<p>' . $value['movie_descr'] . '</p>';
-//         echo '<div class="interaction">';
-//         echo '<a class="play" href="">PLAY</a>';
-//         echo '<a class="more" href=""> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-//         echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-//         echo '</div>';
-//         echo '</div>';
-
-//         echo '<div class="hoverInfo_video">';
-//         echo '<a class="muteBtn">';
-//         echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
-//         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
-//         echo '</a>';
-//         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-//         echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
-//         echo '</video>';
-
-//         echo '</div>';
-
-//         echo '</div>';
-//     }
-// }
+    foreach ($resultat as $values) {
+        echo '<img src="./img/affiche/' . $values['movie_affiche'] . '" alt="">';
+    }
+}
