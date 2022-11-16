@@ -5,7 +5,7 @@ require 'menu.php';
 ?>
 
 <section class="myList">
-    <h1>My <span>List</span></h1>
+    <h1 class="title_list">My <span>List</span></h1>
 
     <?php
     $co = connexionBD();
@@ -13,30 +13,53 @@ require 'menu.php';
     deconnexionBD($co);
     ?>
 
-    <!-- <div class="carousel">
-        <a><img class="prevBtn" src="./img/picto/btnArrow.svg" alt=""></a>
-        <div class="slide">
-            <img class="affiche" src="./img/affiche/affiche1.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img class="affiche" src="./img/affiche/affiche2.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img class="affiche" src="./img/affiche/affiche3.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img class="affiche" src="./img/affiche/affiche4.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img class="affiche" src="./img/affiche/affiche5.jpg" alt="">
-        </div>
-        <a><img class="nextBtn" src="./img/picto/btnArrow.svg" alt=""></a>
-    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        (function($) {
+            $.fn.transformHeroes = function() {
+                var perspective = "1000px",
+                    delta = 20,
+                    width = this.width(),
+                    height = this.height(),
+                    midWidth = width / 2,
+                    midHeight = height / 2;
+
+                this.on({
+                    mousemove: function(e) {
+                        var pos = $(this).offset(),
+                            cursPosX = e.pageX - pos.left,
+                            cursPosY = e.pageY - pos.top,
+                            cursCenterX = midWidth - cursPosX,
+                            cursCenterY = midHeight - cursPosY;
+
+                        $(this).css(
+                            "transform",
+                            "perspective(" +
+                            perspective +
+                            ")  translate(-50%, -50%) rotateX(" +
+                            cursCenterY / delta +
+                            "deg) rotateY(" +
+                            -(cursCenterX / delta) +
+                            "deg)"
+                        );
+                        $(this).removeClass("is-out");
+                    },
+                    mouseleave: function() {
+                        $(this).addClass("is-out");
+                    },
+                });
+
+                return this;
+            };
+        })(jQuery);
+
+        $(".card").transformHeroes();
+    </script>
 
 </section>
 
 
-<script src="./js/carrouselList.js"></script>
+<script src="./js/myList.js"></script>
 <?php
 require 'fin.php';
 ?>

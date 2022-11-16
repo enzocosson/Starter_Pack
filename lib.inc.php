@@ -465,6 +465,7 @@ function ajoutMovieList($co)
     foreach ($resultat_user_list as $values) {
         if ($id == $values['user_list1'] || $id == $values['user_list2'] || $id == $values['user_list3'] || $id == $values['user_list4'] || $id == $values['user_list5']) {
             echo '<h1>Ce film est deja dans votre liste</h1>';
+            header('Refresh:2 ; URL=movies.php');
         } else {
             if ($values['user_list1'] == 0) {
                 $req = "UPDATE imovix_users SET user_list1=$id WHERE user_code= $code ";
@@ -475,8 +476,8 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
-                    echo '<h1>Votre profil à bien été modifié</h1>';
-                    header('Refresh:5 ; URL=movies.php');
+                    echo '<h1>Votre film à bien été ajouté</h1>';
+                    header('Refresh:2 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -489,8 +490,9 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
-                    echo '<h1>Votre profil à bien été modifié</h1>';
-                    header('Refresh:5 ; URL=movies.php');
+                    echo '<h1>Votre film à bien été ajouté</h1>';
+
+                    header('Refresh:2 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -503,8 +505,9 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
-                    echo '<h1>Votre profil à bien été modifié</h1>';
-                    header('Refresh:5 ; URL=movies.php');
+                    echo '<h1>Votre film à bien été ajouté</h1>';
+
+                    header('Refresh:2 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -517,8 +520,9 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
-                    echo '<h1>Votre profil à bien été modifié</h1>';
-                    header('Refresh:5 ; URL=movies.php');
+                    echo '<h1>Votre film à bien été ajouté</h1>';
+
+                    header('Refresh:2 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -531,8 +535,9 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
-                    echo '<h1>Votre profil à bien été modifié</h1>';
-                    header('Refresh:1 ; URL=movies.php');
+                    echo '<h1>Votre film à bien été ajouté</h1>';
+
+                    header('Refresh:2 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -550,7 +555,7 @@ function myList($co)
 {
     $userId = $_SESSION["user_numero"];
     $req = "SELECT * FROM `imovix_movies` WHERE id=( SELECT user_list1 FROM imovix_users WHERE user_code=$userId ) OR id=( SELECT user_list2 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list3 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list4 FROM imovix_users WHERE user_code=$userId) OR id=( SELECT user_list5 FROM imovix_users WHERE user_code=$userId);";
-    echo $req;
+    // echo $req;
     try {
         $resultat = $co->query($req);
     } catch (PDOException $e) {
@@ -558,6 +563,30 @@ function myList($co)
     }
 
     foreach ($resultat as $values) {
-        echo '<img src="./img/affiche/' . $values['movie_affiche'] . '" alt="">';
+        echo '<div class="container_movie_list">';
+        echo '<video class="bg_ba" autoplay loop muted>';
+        echo '<source src="./video/' . $values['movie_ba'] . '" type="video/mp4">';
+        echo '</video>';
+        echo '<div class="info">';
+        echo '<div class="title_affiche">';
+        echo '<h1>' . $values['movie_titre'] . '</h1>';
+        echo '<div class="container_affiche card is-out">';
+        echo '<img class="affiche" src="./img/affiche/' . $values['movie_affiche'] . '" alt="">';
+        echo '<span class="carrousel_affiche_hover">';
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+        echo '</span>';
+        echo '</div>';
+        echo '</div>';
+        echo '<h2>' . $values['movie_titre'] . ' ' . $values['movie_titre_2'] . '</h2>';
+        echo '<p class="age">Age : <span>' . $values['movie_age'] . '</span></p>';
+        echo '<div class="interaction">';
+        echo '<button class="btnIteraction play">PLAY</button>';
+        echo '<button class="btnIteraction teaser">TEASER</button>';
+        echo '</div>';
+        echo '<h3 class="genre">Genre : ' . $values['movie_genre'] . '</h3>';
+        echo '<p class="descr">' . $values['movie_descr'] . '</p>';
+        echo '<button class="removeList">Remove from the list</button>';
+        echo '</div>';
+        echo '</div>';
     }
 }
