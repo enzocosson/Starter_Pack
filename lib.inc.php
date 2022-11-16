@@ -216,7 +216,6 @@ function afficherMoviesTendance($co)
 
         echo '<div class="interaction">';
         echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
-        // echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""> <img class="good_black" src="./img/picto/thumbUp_black.svg" alt=""></a>';
         echo '</div>';
 
         echo '</span>';
@@ -241,7 +240,7 @@ function afficherMoviesTendance($co)
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '</div>';
 
@@ -255,10 +254,22 @@ function afficherMoviesAction($co)
 
     $resultat = $co->query($req);
     foreach ($resultat as $value) {
+
         echo '<div class="carrousel_genre_container">';
 
         echo '<div class="carrousel_affiche">';
         echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
         echo '</div>';
 
 
@@ -271,11 +282,6 @@ function afficherMoviesAction($co)
         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
         echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '<div class="interaction">';
-        echo '<a class="play" href="">PLAY</a>';
-        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-        echo '</div>';
         echo '</div>';
 
         echo '<div class="hoverInfo_video">';
@@ -284,13 +290,12 @@ function afficherMoviesAction($co)
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '</div>';
 
         echo '</div>';
         echo '</div>';
-        $_SESSION['idMovie'] = $value['id'];
     }
 }
 
@@ -307,6 +312,17 @@ function afficherMoviesAventure($co)
 
         echo '<div class="carrousel_affiche">';
         echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
         echo '</div>';
 
 
@@ -319,11 +335,6 @@ function afficherMoviesAventure($co)
         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
         echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '<div class="interaction">';
-        echo '<a class="play" href="">PLAY</a>';
-        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-        echo '</div>';
         echo '</div>';
 
         echo '<div class="hoverInfo_video">';
@@ -332,13 +343,12 @@ function afficherMoviesAventure($co)
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '</div>';
 
         echo '</div>';
         echo '</div>';
-        $_SESSION['idMovie'] = $value['id'];
     }
 }
 
@@ -353,6 +363,17 @@ function afficherMoviesThriller($co)
 
         echo '<div class="carrousel_affiche">';
         echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
         echo '</div>';
 
 
@@ -365,11 +386,6 @@ function afficherMoviesThriller($co)
         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
         echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '<div class="interaction">';
-        echo '<a class="play" href="">PLAY</a>';
-        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-        echo '</div>';
         echo '</div>';
 
         echo '<div class="hoverInfo_video">';
@@ -378,13 +394,12 @@ function afficherMoviesThriller($co)
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '</div>';
 
         echo '</div>';
         echo '</div>';
-        $_SESSION['idMovie'] = $value['id'];
     }
 }
 
@@ -398,7 +413,18 @@ function afficherMoviesRomance($co)
         echo '<div class="carrousel_genre_container">';
 
         echo '<div class="carrousel_affiche">';
-        echo '<img  class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
         echo '</div>';
 
 
@@ -411,11 +437,6 @@ function afficherMoviesRomance($co)
         echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
         echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
         echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '<div class="interaction">';
-        echo '<a class="play" href="">PLAY</a>';
-        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> </a>';
-        echo '<a class="more" href=""><img class="good" src="./img/picto/thumbUp.svg" alt=""></a>';
-        echo '</div>';
         echo '</div>';
 
         echo '<div class="hoverInfo_video">';
@@ -424,7 +445,7 @@ function afficherMoviesRomance($co)
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
         echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/avengersEndgame_ba.mp4" type="video/mp4">';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '</div>';
 
