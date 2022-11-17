@@ -568,8 +568,11 @@ function myList($co)
         echo '<source src="./video/' . $values['movie_ba'] . '" type="video/mp4">';
         echo '</video>';
         echo '<div class="info">';
+        echo '<div class="container_illu">';
+        echo '<img class="illustration" src="./img/illustration/' . $values['movie_illu'] . '" alt="">';
+        echo '</div>';
         echo '<div class="title_affiche">';
-        echo '<h1>' . $values['movie_titre'] . '</h1>';
+        echo '<h1 class="title">' . $values['movie_titre'] . '</h1>';
         echo '<div class="container_affiche card is-out">';
         echo '<img class="affiche" src="./img/affiche/' . $values['movie_affiche'] . '" alt="">';
         echo '<span class="carrousel_affiche_hover">';
