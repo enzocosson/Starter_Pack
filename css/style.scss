@@ -2359,6 +2359,42 @@ header {
   }
 }
 
+.container_ajout_list {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--noir);
+
+  .ajout_movie {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .anim_warning {
+      width: 17vw;
+      height: 17vw;
+    }
+
+    h1 {
+      width: 80%;
+      font-size: 4vw;
+      color: var(--blanc);
+      font-weight: 600;
+      text-align: center;
+
+      span {
+        color: var(--orange);
+      }
+    }
+  }
+}
+
 footer {
   display: flex;
   align-items: center;

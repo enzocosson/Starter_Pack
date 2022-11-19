@@ -476,8 +476,15 @@ function ajoutMovieList($co)
                 }
 
                 if ($resultat->rowCount() == 1) {
+                    $req = 'SELECT * FROM imovix_movies WHERE id= ' . $id . ' ';
+                    $resultat_affiche = $co->query($req);
+
+                    foreach ($resultat_affiche as $value) {
+                        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '">';
+                    }
+
                     echo '<h1>Votre film à bien été ajouté</h1>';
-                    header('Refresh:2 ; URL=movies.php');
+                    header('Refresh:99999 ; URL=movies.php');
                 } else {
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
@@ -542,7 +549,7 @@ function ajoutMovieList($co)
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
                 }
             } else {
-                echo '<h1>Vous avez atteind le nombre maximum de film dans votre liste.</h1>';
+                echo '<h1>Vous avez atteind le nombre <span>maximum</span> de film dans votre liste.</h1>';
             }
         }
     }
