@@ -522,7 +522,7 @@ function ajoutMovieList($co)
                     echo "</div>";
                     echo "</h2>";
                     echo '</div>';
-                    header('Refresh:4.5 ; URL=movies.php');
+                    header('Refresh:3.1 ; URL=movies.php');
                 } else {
                     echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
@@ -540,13 +540,49 @@ function ajoutMovieList($co)
                     $resultat_affiche = $co->query($req);
 
                     foreach ($resultat_affiche as $value) {
-                        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '">';
+                        echo '<img class="bg" src="./img/bg/' . $value['movie_bg'] . '">';
+                        echo '<div class="content">';
+                        echo '<img class="affiche" src="./img/affiche/' . $value['movie_affiche'] . '">';
                     }
 
-                    echo '<h1><span>' . $value['movie_titre'] . '</span> à bien été ajouté</h1>';
 
+                    echo '<h1><span>' . $value['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
 
-                    header('Refresh:2 ; URL=movies.php');
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>j</div>";
+                    echo "<div class='letter'>o</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+
+                    echo "</div>";
+                    echo "</h2>";
+                    echo '</div>';
+                    header('Refresh:3.1 ; URL=movies.php');
                 } else {
                     echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
@@ -564,13 +600,49 @@ function ajoutMovieList($co)
                     $resultat_affiche = $co->query($req);
 
                     foreach ($resultat_affiche as $value) {
-                        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '">';
+                        echo '<img class="bg" src="./img/bg/' . $value['movie_bg'] . '">';
+                        echo '<div class="content">';
+                        echo '<img class="affiche" src="./img/affiche/' . $value['movie_affiche'] . '">';
                     }
 
-                    echo '<h1><span>' . $value['movie_titre'] . '</span> à bien été ajouté</h1>';
 
+                    echo '<h1><span>' . $value['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
 
-                    header('Refresh:2 ; URL=movies.php');
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>j</div>";
+                    echo "<div class='letter'>o</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+
+                    echo "</div>";
+                    echo "</h2>";
+                    echo '</div>';
+                    header('Refresh:3.1 ; URL=movies.php');
                 } else {
                     echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
@@ -588,13 +660,49 @@ function ajoutMovieList($co)
                     $resultat_affiche = $co->query($req);
 
                     foreach ($resultat_affiche as $value) {
-                        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '">';
+                        echo '<img class="bg" src="./img/bg/' . $value['movie_bg'] . '">';
+                        echo '<div class="content">';
+                        echo '<img class="affiche" src="./img/affiche/' . $value['movie_affiche'] . '">';
                     }
 
-                    echo '<h1><span>' . $value['movie_titre'] . '</span> à bien été ajouté</h1>';
 
+                    echo '<h1><span>' . $value['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
 
-                    header('Refresh:2 ; URL=movies.php');
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>j</div>";
+                    echo "<div class='letter'>o</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+
+                    echo "</div>";
+                    echo "</h2>";
+                    echo '</div>';
+                    header('Refresh:3.1 ; URL=movies.php');
                 } else {
                     echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
@@ -612,12 +720,49 @@ function ajoutMovieList($co)
                     $resultat_affiche = $co->query($req);
 
                     foreach ($resultat_affiche as $value) {
-                        echo '<img src="./img/affiche/' . $value['movie_affiche'] . '">';
+                        echo '<img class="bg" src="./img/bg/' . $value['movie_bg'] . '">';
+                        echo '<div class="content">';
+                        echo '<img class="affiche" src="./img/affiche/' . $value['movie_affiche'] . '">';
                     }
 
-                    echo '<h1><span>' . $value['movie_titre'] . '</span> à bien été ajouté</h1>';
 
-                    header('Refresh:2 ; URL=movies.php');
+                    echo '<h1><span>' . $value['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>j</div>";
+                    echo "<div class='letter'>o</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>l</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+
+                    echo "</div>";
+                    echo "</h2>";
+                    echo '</div>';
+                    header('Refresh:3.1 ; URL=movies.php');
                 } else {
                     echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                     echo '<h1>Une erreur est survenu lors de la modification</h1>';
@@ -626,6 +771,8 @@ function ajoutMovieList($co)
 
                 echo '<lottie-player class="anim_warning" src="https://assets4.lottiefiles.com/packages/lf20_Tkwjw8.json" background="transparent" speed="1" loop autoplay></lottie-player>';
                 echo '<h1>Vous avez atteind le nombre <span>maximum</span> de film dans votre liste.</h1>';
+                echo '<p class="goback">Redirection dans un instant...</p>';
+                header('Refresh:3 ; URL=movies.php');
             }
         }
     }
