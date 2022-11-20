@@ -198,6 +198,46 @@ function afficherProfilNav($co)
 
 
 
+function couvertureMovie($co)
+{
+    $req = 'SELECT * FROM imovix_movies ORDER BY RAND() LIMIT 1;';
+    $resultatCouverture = $co->query($req);
+    foreach ($resultatCouverture as $valueCouverture) {
+        echo '<video class="interstellar_ba" controls autoplay loop muted>';
+        echo '<source src="./video/' . $valueCouverture['movie_ba'] . '" type="video/mp4">';
+        echo '</video>';
+        echo '<img class="illu_conv" src="./img/illustration/' . $valueCouverture['movie_illu'] . '">';
+        echo '<div class="couverture_info">';
+        echo '<div class="description">';
+        echo ' <h1>' . $valueCouverture['movie_titre'] . '</h1>';
+        echo ' <h2>' . $valueCouverture['movie_titre_2'] . '</h2>';
+        echo '<div class="interaction">';
+        echo ' <a class="play" href="">PLAY</a>';
+        echo ' <a href="">TEASER</a>';
+        echo '<a href="list_ajout.php?id=' . $valueCouverture['id'] . '">+ ADD LIST</a>';
+        echo '</div>';
+        echo '<h3>Genre : ' . $valueCouverture['movie_genre'] . '</h3>';
+        echo '<p>' . $valueCouverture['movie_descr'] . '</p>';
+        echo '</div>';
+        echo ' <div class="container_timeline_sound">';
+        echo ' <div class="timeline"></div>';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '</div>';
+        echo ' </div>';
+    }
+}
+
+
+
+
+
+
+
+
+
 function afficherMoviesTendance($co)
 {
     $req = 'SELECT * FROM imovix_movies WHERE movie_tendance=1';
@@ -1038,4 +1078,9 @@ function myList($co)
         echo '</div>';
         echo '</div>';
     }
+}
+
+
+function teaser($co)
+{
 }

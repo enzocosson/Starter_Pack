@@ -1513,13 +1513,12 @@ header .burger .line3 {
   transform: translate(-50%, -50%);
   z-index: -3;
 }
-.movies .distortion {
+.movies .illu_conv {
   position: absolute;
   top: 60%;
-  left: 68%;
+  left: 75%;
   transform: translate(-50%, -50%);
-  width: 45vw;
-  height: 45vw;
+  height: 70vh;
   z-index: 1;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1538,14 +1537,21 @@ header .burger .line3 {
 }
 .movies .couverture_info .description h1 {
   position: relative;
-  line-height: 15vh;
   font-size: 6vw;
-  color: white;
+  color: var(--orange);
   font-weight: 800;
   letter-spacing: 0em;
 }
 .movies .couverture_info .description h1 span {
   color: var(--orange);
+}
+.movies .couverture_info .description h2 {
+  position: relative;
+  font-size: 2.5vw;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 0em;
+  margin-bottom: 2vh;
 }
 .movies .couverture_info .description h3 {
   margin-top: 2vh;
@@ -1559,7 +1565,7 @@ header .burger .line3 {
   font-size: 1.5vw;
   font-weight: 200;
   color: white;
-  width: 50%;
+  width: 60%;
 }
 .movies .couverture_info .description .interaction {
   display: flex;
@@ -2837,6 +2843,15 @@ header .burger .line3 {
     opacity: 0;
     transform: scale(0);
   }
+}
+
+.teaser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--noir);
 }
 
 footer {
