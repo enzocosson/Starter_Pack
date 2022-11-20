@@ -23,7 +23,7 @@ require 'menu.php';
     </script>
 
     <video class="interstellar_ba" controls autoplay loop muted>
-        <source src="./video/interstellar_ba.mp4" type="video/mp4">
+        <source src="./video/ba_interstellar.mp4" type="video/mp4">
     </video>
 
     <div class="couverture_info">

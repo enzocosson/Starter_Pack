@@ -17,6 +17,10 @@ require 'lib.inc.php';
             <li class="link first_link"><a href="list.php">My List</a></li>
             <li class="link second_link"><a href="list.php">My List</a></li>
         </div>
+        <div class="container_link">
+            <li class="link first_link"><a href="recherche.php">Recherche</a></li>
+            <li class="link second_link"><a href="recherche.php">Recherche</a></li>
+        </div>
 
     </ul>
 

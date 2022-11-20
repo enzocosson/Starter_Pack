@@ -632,6 +632,222 @@ function ajoutMovieList($co)
 }
 
 
+function supprList($co)
+{
+    $id = $_GET['id'];
+    $code = $_SESSION['user_numero'];
+
+    $req = 'SELECT * FROM imovix_users WHERE user_code= ' . $_SESSION["user_numero"] . ' ';
+    $resultat_suppr = $co->query($req);
+    foreach ($resultat_suppr as $values) {
+        if ($id == $values['user_list1']) {
+            $req2 = "UPDATE imovix_users SET user_list1=0 WHERE user_code=$code ";
+            try {
+                $co->query($req2);
+
+                $reqMovie = "SELECT * FROM imovix_movies WHERE id=$id";
+                $resultatMovie = $co->query($reqMovie);
+
+                foreach ($resultatMovie as $valueIdMovie) {
+                    echo '<lottie-player class="deleteAnimation" src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+                    echo '<h1><span>' . $valueIdMovie['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>r</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>m</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "</div>";
+                    echo "</h2>";
+                }
+            } catch (PDOException $e) {
+                print 'Erreur : ' . $e->getMessage() . '<br />';
+            }
+            header('Refresh:3 ; URL=list.php');
+        } elseif ($id == $values['user_list2']) {
+            $req2 = "UPDATE imovix_users SET user_list2=0 WHERE user_code=$code ";
+            try {
+                $co->query($req2);
+
+                $reqMovie = "SELECT * FROM imovix_movies WHERE id=$id";
+                $resultatMovie = $co->query($reqMovie);
+
+                foreach ($resultatMovie as $valueIdMovie) {
+                    echo '<lottie-player class="deleteAnimation" src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+                    echo '<h1><span>' . $valueIdMovie['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>r</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>m</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "</div>";
+                    echo "</h2>";
+                }
+            } catch (PDOException $e) {
+                print 'Erreur : ' . $e->getMessage() . '<br />';
+            }
+            header('Refresh:3 ; URL=list.php');
+        } elseif ($id == $values['user_list3']) {
+            $req2 = "UPDATE imovix_users SET user_list3=0 WHERE user_code=$code ";
+            try {
+                $co->query($req2);
+
+                $reqMovie = "SELECT * FROM imovix_movies WHERE id=$id";
+                $resultatMovie = $co->query($reqMovie);
+
+                foreach ($resultatMovie as $valueIdMovie) {
+                    echo '<lottie-player class="deleteAnimation" src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+                    echo '<h1><span>' . $valueIdMovie['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>r</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>m</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "</div>";
+                    echo "</h2>";
+                }
+            } catch (PDOException $e) {
+                print 'Erreur : ' . $e->getMessage() . '<br />';
+            }
+            header('Refresh:3 ; URL=list.php');
+        } elseif ($id == $values['user_list4']) {
+            $req2 = "UPDATE imovix_users SET user_list4=0 WHERE user_code=$code ";
+            try {
+                $co->query($req2);
+
+                $reqMovie = "SELECT * FROM imovix_movies WHERE id=$id";
+                $resultatMovie = $co->query($reqMovie);
+
+                foreach ($resultatMovie as $valueIdMovie) {
+                    echo '<lottie-player class="deleteAnimation" src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+                    echo '<h1><span>' . $valueIdMovie['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>r</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>m</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "</div>";
+                    echo "</h2>";
+                }
+            } catch (PDOException $e) {
+                print 'Erreur : ' . $e->getMessage() . '<br />';
+            }
+            header('Refresh:3 ; URL=list.php');
+        } elseif ($id == $values['user_list5']) {
+            $req2 = "UPDATE imovix_users SET user_list5=0 WHERE user_code=$code ";
+            try {
+                $co->query($req2);
+
+                $reqMovie = "SELECT * FROM imovix_movies WHERE id=$id";
+                $resultatMovie = $co->query($reqMovie);
+
+                foreach ($resultatMovie as $valueIdMovie) {
+                    echo '<lottie-player class="deleteAnimation" src="https://assets1.lottiefiles.com/packages/lf20_VmD8Sl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+                    echo '<h1><span>' . $valueIdMovie['movie_titre'] . '</span></h1>';
+                    echo "<h2 class='validation'>";
+                    echo "<div class='word'>";
+
+                    echo "<div class='letter'>a</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>b</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>n</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>t</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "<div class='letter'>&nbsp</div>";
+                    echo "<div class='letter'>s</div>";
+                    echo "<div class='letter'>u</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>p</div>";
+                    echo "<div class='letter'>r</div>";
+                    echo "<div class='letter'>i</div>";
+                    echo "<div class='letter'>m</div>";
+                    echo "<div class='letter'>e</div>";
+                    echo "</div>";
+                    echo "</h2>";
+                }
+            } catch (PDOException $e) {
+                print 'Erreur : ' . $e->getMessage() . '<br />';
+            }
+            header('Refresh:3 ; URL=list.php');
+        }
+    }
+}
+
+
+
+
+
 
 
 function myList($co)
@@ -671,7 +887,7 @@ function myList($co)
         echo '</div>';
         echo '<h3 class="genre">Genre : ' . $values['movie_genre'] . '</h3>';
         echo '<p class="descr">' . $values['movie_descr'] . '</p>';
-        echo '<button class="removeList">Remove from the list</button>';
+        echo '<a class="removeList" href="list_suppr.php?id=' . $values['id'] . '">Remove from the list</a>';
         echo '</div>';
         echo '</div>';
     }
