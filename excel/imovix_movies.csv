@@ -1,0 +1,52 @@
+id;movie_affiche;movie_titre;movie_titre_2;movie_genre;movie_distrib;movie_ba;movie_descr;movie_age;movie_illu;movie_bg;movie_tendance;movie_action;movie_aventure;movie_thriller;movie_romance
+1;affiche1.jpg;Avengers;Endgame;Action, aventure, science-fiction;Robert Downey Jr, Chris Evans, Chris Hemsworth...;ba_avengers_endgame.mp4;Le Titan Thanos, ayant rÈussi ‡ s'approprier les six Pierres d'InfinitÈ et ‡ les rÈunir sur le Gantelet dorÈ, a pu rÈaliser son objectif de pulvÈriser la moitiÈ de la population de l'Univers. Cinq ans plus tard, Scott Lang, alias Ant-Man, parvient ‡ s'Èchapper de la dimension subatomique o˘ il Ètait coincÈ. Il propose aux Avengers une solution pour faire revenir ‡ la vie tous les Ítres disparus, dont leurs alliÈs et coÈquipiers : rÈcupÈrer les Pierres d'InfinitÈ dans le passÈ.;Tous Publics;illu_avengers.png;bg_avengers.jpg;1;1;1;0;0
+2;affiche2.jpg;Avatar 2;La Voie de l'eau;Action, aventure, science-fiction;Sam Worthington, Zoe Saldana, Sigourney Weaver...;ba_avatar2.mp4;Jake Sully et Ney'tiri ont formÈ une famille et font tout pour rester aussi soudÈs que possible. Ils sont cependant contraints de quitter leur foyer et d'explorer les diffÈrentes rÈgions encore mystÈrieuses de Pandora. Lorsqu'une ancienne menace refait surface, Jake va devoir mener une guerre difficile contre les humains.;Tous Publics;illu_avatar.png;bg_avatar_2.png;1;1;1;0;0
+3;affiche3.jpg;Spider-Man;Into the spider-verse;Action, science-fiction;Shameik Moore;ba_spiderman.mp4;Mordu par une araignÈe radioactive dans le mÈtro, l'adolescent de Brooklyn, Miles Morales, dÈveloppe des pouvoirs mystÈrieux qui le transforment en Spider-Man. Lorsqu'il rencontre Peter Parker, il dÈcouvre rapidement qu'il n'est pas le seul avec ces talents spÈciaux.;Tous Publics;illu_spiderman.png;bg_spiderman.jpg;1;1;0;0;0
+4;affiche4.jpg;Harry Potter;Et les reliques de la mort Part.2;Action, science-fiction;Daniel Radcliffe, Emma Watson, Rupert Grint;ba_harry_potter.mp4;Dans la deuxiËme partie de cette finale Èpique, la bataille entre les forces du bien et celles du mal du monde des magiciens dÈgÈnËre en une guerre tous azimuts. Les enjeux n'ont jamais ÈtÈ si grands et personne n'est en sÈcuritÈ.;-12;illu_harrypotter.png;bg_harrypotter.jpg;1;1;0;0;0
+5;affiche5.jpg;Pirates des Caraibes;Le secret du coffre maudit;Action, comedie, fantasy, science-fiction;Johnny Depp;ba_pirates_des_caraibes.mp4;Lorsque le pirate fantÙme Davy Jones vient rÈclamer sa dette de sang ‡ l'excentrique capitaine Jack Sparrow, ce dernier cherche un moyen d'Èchapper ‡ ce cruel destin qui garantirait la damnation de son ‚me pour l'ÈternitÈ.;Tous Publics;illu_pirates.png;bg_pirates.jpg;1;1;0;0;0
+6;affiche6.jpg;James Bond;No time to die;Action, espionnage;Daniel Craig;ba_no_time_to_die.mp4;James Bond n'est plus en service et profite d'une vie tranquille en JamaÔque. Mais son rÈpit est de courte durÈe car l'agent de la CIA Felix Leiter fait son retour pour lui demander son aide. Sa mission, qui est de secourir un scientifique kidnappÈ, va se rÈvÈler plus traÓtre que prÈvu, et mener 007 sur la piste d'un mÈchant possÈdant une nouvelle technologie particuliËrement dangereuse.;Tous Publics;illu_jamesbond.png;bg_jamesbond.jpg;1;1;0;0;0
+7;affiche7.jpg;Titanic;;Romance, drame;Leonardo Dicaprio;ba_titanic.mp4;En 1997, l'Èpave du Titanic est l'objet d'une exploration fiÈvreuse, menÈe par des chercheurs de trÈsor en quÍte d'un diamant bleu qui se trouvait ‡ bord. FrappÈe par un reportage tÈlÈvisÈ, l'une des rescapÈes du naufrage, ‚gÈe de 102 ans, Rose DeWitt, se rend sur place et Èvoque ses souvenirs. 1912.;Tout Publics;illu_titanic.png;bg_titanic.jpg;1;0;0;0;1
+8;affiche8.jpg;Interstellar;;Action, aventure, science-fiction;Matthew McConaughey;ba_interstellar.mp4;Dans un proche futur, la Terre est devenue hostile pour l'homme. Les tempÍtes de sable sont frÈquentes et il n'y a plus que le maÔs qui peut Ítre cultivÈ, en raison d'un sol trop aride. Cooper est un pilote, recyclÈ en agriculteur, qui vit avec son fils et sa fille dans la ferme familiale.;-13;illu_interstellar.png;bg_interstellar.jpg;1;1;1;0;0
+9;affiche9.jpg;Pirates des Caraibes;La malédiction du black pearl;;;;;;;bg_pirates2.jpg;1;1;1;0;0
+10;affiche10.jpg;Pirates des Caraibes;Jusqu'au bout du monde;;;;;;;bg_pirates3.jpg;1;1;1;0;0
+11;affiche11.jpg;Pirates des Caraibes;La fontaine de jouvence;;;;;;;bg_pirates4.jpg;1;1;1;0;0
+12;affiche12.jpg;Pirates des Caraibes;La vengence de Salazar;;;;;;;bg_pirates5.jpg;1;1;1;0;0
+13;affiche13.jpg;Harry Potter;A l'école des sorciers;;;;;;;bg_harrypotter1.jpg;1;1;1;0;0
+14;affiche14.jpg;Harry Potter;Et l'ordre du phoenix;;;;;;;bg_harrypotter5.jpg;1;1;1;0;0
+15;affiche15.jpg;Top Gun;1986;;;;;;;bg_topgun1.jpg;1;1;1;0;0
+16;affiche16.jpg;Top Gun;Maverick;;;;;;;bg_topgun2.jpg;1;1;1;0;0
+17;affiche17.jpg;Forrest Gump;;;;;;;;bg_forrestgump.jpg;1;1;1;0;0
+18;affiche18.jpg;Retour vers le futur;1;;;;;;;bg_retourverslefutur1.jpg;1;1;1;0;0
+19;affiche19.jpg;Retour vers le futur;2;;;;;;;bg_retourverslefutur2.jpg;1;1;1;0;0
+20;affiche20.jpg;Retour vers le futur;3;;;;;;;bg_retourverslefutur3.jpg;1;1;1;0;0
+21;affiche21.jpg;Matrix;;;;;;;;bg_matrix.jpg;1;1;1;0;0
+22;affiche22.jpg;Fast and Furious;1;;;;;;;bg_fastandfurious1.jpg;1;1;1;0;0
+23;affiche23.jpg;Fast and Furious;2;;;;;;;bg_fastandfurious2.jpg;1;1;1;0;0
+24;affiche24.jpg;Fast and Furious;3;;;;;;;bg_fastandfurious3.jpg;1;1;1;0;0
+25;affiche25.jpg;Fast and Furious;4;;;;;;;bg_fastandfurious4.jpg;1;1;1;0;0
+26;affiche26.jpg;Fast and Furious;5;;;;;;;bg_fastandfurious5.jpg;1;1;1;0;0
+27;affiche27.jpg;Fight Club;;;;;;;;bg_fightclub.jpg;1;1;1;0;0
+28;affiche28.jpg;The amazing Spider-Man;;;;;;;;bg_theamazingspiderman1.jpg;1;1;1;0;0
+29;affiche29.jpg;The amazing Spider-Man;;;;;;;;bg_theamazingspiderman2.jpg;1;1;1;0;0
+30;affiche30.jpg;Spider-Man;Homecoming;;;;;;;bg_spidermanTH1.jpg;1;1;1;0;0
+31;affiche31.jpg;Spider-Man;Far From Home;;;;;;;bg_spidermanTH2.jpg;1;1;1;0;0
+32;affiche32.jpg;Spider-Man;No Way Home;;;;;;;bg_spidermanTH3.jpg;1;1;1;0;0
+33;affiche33.jpg;Twilight;Chapitre I : Fascination;;;;;;;bg_twilight1.jpg;1;1;1;0;0
+34;affiche34.jpg;Twilight;Chapitre II : Tentation;;;;;;;bg_twilight2.jpg;1;1;1;0;0
+35;affiche35.jpg;Twilight;Chapitre III : Hésitation;;;;;;;bg_twilight3.jpg;1;1;1;0;0
+36;affiche36.jpg;Twilight;Chapitre 4 - Révélation, 1ère partie;;;;;;;bg_twilight4.jpg;1;1;1;0;0
+37;affiche37.jpg;Twilight;Chapitre 5 - Révélation, 2e partie;;;;;;;bg_twilight5.jpg;1;1;1;0;0
+38;affiche38.jpg;Eaux Profondes;;;;;;;;bg_eauxprofondes.jpg;1;1;1;0;0
+39;affiche39.jpg;Pulp Fiction;;;;;;;;bg_pulpfiction.jpg;1;1;1;0;0
+40;affiche40.jpg;Gran Torino;;;;;;;;bg_grantorino.jpg;1;1;1;0;0
+41;affiche41.jpg;Inception;;;;;;;;bg_inception.jpg;1;1;1;0;0
+42;affiche42.jpg;Shutter Island;;;;;;;;bg_shutterisland.jpg;1;1;1;0;0
+43;affiche43.jpg;Room;;;;;;;;bg_room.jpg;1;1;1;0;0
+44;affiche44.jpg;Da Vinci Code;;;;;;;;bg_davincicode.jpg;1;1;1;0;0
+45;affiche45.jpg;Anges & Démons;;;;;;;;bg_angeetdemons.jpg;1;1;1;0;0
+46;affiche46.jpg;Le seigneur des anneaux;La communauté des anneaux;;;;;;;bg_leseigneursdesanneaux1.jpg;1;1;1;0;0
+47;affiche47.jpg;Le seigneur des anneaux;Les deux tours;;;;;;;bg_leseigneursdesanneaux2.jpg;1;1;1;0;0
+48;affiche48.jpg;Le seigneur des anneaux;Le retour du roi;;;;;;;bg_leseigneursdesanneaux3.jpg;1;1;1;0;0
+49;affiche49.jpg;Le Hobbit;Un voyage inattendu;;;;;;;bg_lehobbit1.jpg;1;1;1;0;0
+50;affiche50.jpg;Le Hobbit;La désolation de Smaug;;;;;;;bg_lehobbit2.jpg;1;1;1;0;0
+51;affiche51.jpg;Le Hobbit;La batailles des 5 armées;;;;;;;bg_lehobbit3.jpg;1;1;1;0;0

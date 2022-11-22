@@ -2847,11 +2847,536 @@ header .burger .line3 {
 
 .teaser {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
   background-color: var(--noir);
+}
+.teaser .container_video {
+  margin-top: 2vh;
+  position: relative;
+  width: 80vw;
+}
+.teaser .container_video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--orange);
+  -webkit-animation: animTeaser 1s cubic-bezier(0.83, 0, 0.58, 1) 1 forwards;
+          animation: animTeaser 1s cubic-bezier(0.83, 0, 0.58, 1) 1 forwards;
+  z-index: 999;
+}
+@-webkit-keyframes animTeaser {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+@keyframes animTeaser {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+.teaser .container_video .container_video_titre {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 4vw;
+  color: var(--blanc);
+  z-index: 9999;
+  -webkit-animation: container_video_titre 2s ease-in-out 1 forwards;
+          animation: container_video_titre 2s ease-in-out 1 forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  text-align: center;
+}
+@-webkit-keyframes container_video_titre {
+  from {
+    top: 50%;
+    left: 50%;
+    font-size: 4vw;
+  }
+  to {
+    top: 7%;
+    left: 50%;
+    font-size: 1.5vw;
+  }
+}
+@keyframes container_video_titre {
+  from {
+    top: 50%;
+    left: 50%;
+    font-size: 4vw;
+  }
+  to {
+    top: 7%;
+    left: 50%;
+    font-size: 1.5vw;
+  }
+}
+.teaser .container_video .container_video_titre span {
+  font-size: 4vw;
+  color: var(--blanc);
+  -webkit-animation: container_video_titre_span 2s ease-in-out 1 forwards;
+          animation: container_video_titre_span 2s ease-in-out 1 forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+@-webkit-keyframes container_video_titre_span {
+  from {
+    font-size: 4vw;
+    color: var(--blanc);
+  }
+  to {
+    font-size: 2.5vw;
+    color: var(--orange);
+  }
+}
+@keyframes container_video_titre_span {
+  from {
+    font-size: 4vw;
+    color: var(--blanc);
+  }
+  to {
+    font-size: 2.5vw;
+    color: var(--orange);
+  }
+}
+.teaser .interaction {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.teaser .interaction a {
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 700;
+  padding: 1vh 0vw;
+  margin-right: 4vw;
+  border-radius: 50px;
+  color: var(--blanc);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1764705882);
+  transition: 0.3s ease-in-out;
+}
+.teaser .interaction a:hover {
+  color: var(--noir);
+  background-color: var(--orange);
+  box-shadow: 0px 0px 10px 5px rgba(255, 196, 44, 0.3607843137);
+}
+.teaser .interaction .play {
+  position: relative;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 700;
+  padding: 1vh 0vw;
+  margin-right: 4vw;
+  border-radius: 50px;
+  color: var(--noir);
+  background-color: var(--orange);
+  box-shadow: 0px 0px 10px 5px rgba(255, 196, 44, 0.3607843137);
+  border: 3px solid transparent;
+  overflow: hidden;
+  transition: 100ms ease-in-out;
+}
+.teaser .interaction .play::before {
+  position: absolute;
+  content: "PLAY";
+  bottom: 0%;
+  left: 50%;
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, 0%);
+  border-radius: 50px;
+  background-color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blanc);
+  z-index: 10;
+  opacity: 0;
+  transition: 150ms ease-in-out;
+}
+.teaser .interaction .play:hover::before {
+  height: 100%;
+  opacity: 1;
+}
+.teaser .interaction .play:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3607843137);
+  border: 3px solid var(--orange);
+}
+.teaser .teaser_ba {
+  width: 100%;
+}
+
+.recherche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 15vh;
+  width: 100%;
+  background-color: var(--noir);
+}
+.recherche form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recherche form h1 {
+  font-size: 4vw;
+  color: var(--blanc);
+  font-weight: 600;
+  text-align: center;
+}
+.recherche form h1 span {
+  color: var(--orange);
+}
+.recherche form input {
+  box-sizing: border-box;
+}
+.recherche form input::-moz-placeholder {
+  color: var(--orange);
+  font-style: italic;
+}
+.recherche form input:-ms-input-placeholder {
+  color: var(--orange);
+  font-style: italic;
+}
+.recherche form input::placeholder {
+  color: var(--orange);
+  font-style: italic;
+}
+.recherche form .search {
+  margin-top: 5vh;
+  width: 50%;
+  height: 4vh;
+  border: none;
+  border-radius: 50vw;
+  color: var(--orange);
+  padding-left: 1vw;
+  font-size: 1vw;
+}
+.recherche form .submit {
+  cursor: pointer;
+  margin-top: 2vh;
+  width: 20%;
+  height: 4vh;
+  border: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 50vw;
+  color: var(--blanc);
+  background-color: var(--orange);
+  font-size: 1vw;
+}
+.recherche .affichageRecherche {
+  position: relative;
+  margin-top: 10vh;
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 350px;
+}
+.recherche .affichageRecherche .carrousel_genre_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+.recherche .affichageRecherche .carrousel_genre_container:hover div:nth-child(2) {
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche {
+  cursor: pointer;
+  position: relative;
+  width: 250px;
+  height: 360px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 0px 69px -41px rgba(255, 195, 44, 0);
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche:hover {
+  border: 3px solid var(--orange);
+  box-shadow: 0px 0px 69px -41px rgba(255, 195, 44, 0.699);
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 357px;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche:hover .carrousel_affiche_hover {
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  background: rgba(49, 49, 49, 0.72);
+  transition: 0.3s ease-in-out;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .play .arrow {
+  width: 150px;
+  transition: 0.2s ease-in-out;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .play:hover .arrow {
+  width: 160px;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction {
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more {
+  position: relative;
+  width: 50px;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+  color: var(--orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more .plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  fill: var(--orange);
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  z-index: 100;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more .good {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  fill: var(--orange);
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  z-index: 100;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more:hover {
+  background-color: var(--orange);
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more .plus_black {
+  opacity: 0;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more .good_black {
+  opacity: 0;
+  width: 65%;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more:hover .plus {
+  opacity: 0;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more:hover .good {
+  opacity: 0;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more:hover .good_black {
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .carrousel_affiche .carrousel_affiche_hover .interaction .more:hover .plus_black {
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo {
+  box-sizing: border-box;
+  pointer-events: none;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 350px;
+  background-color: var(--orange);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr {
+  width: 45%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr h1 {
+  margin-bottom: 0.5vh;
+  font-family: "Onest";
+  font-weight: 800;
+  font-size: 45px;
+  color: var(--noir);
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr h2 {
+  margin-bottom: 0.5vh;
+  font-family: "Onest";
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--noir);
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr h2 span {
+  font-weight: 700;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr p {
+  margin-top: 2vh;
+  margin-bottom: 2.5vh;
+  font-family: "Onest";
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--noir);
+  text-align: justify;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction .play {
+  width: 250px;
+  height: 100%;
+  font-size: 20px;
+  background-color: #313131;
+  border-radius: 50vw;
+  border: 3px solid var(--noir);
+  color: var(--orange);
+  transition: 0.3s ease-in-out;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction .play:hover {
+  background-color: var(--orange);
+  border: 3px solid var(--noir);
+  color: var(--noir);
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction .more {
+  width: 40px;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--noir);
+  color: var(--noir);
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction .more .plus {
+  width: 40%;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_descr .interaction .more .good {
+  width: 70%;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video {
+  position: relative;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  padding: 20px;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn {
+  cursor: pointer;
+  position: relative;
+  width: 2vw;
+  height: 2vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .noMuted,
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .muted {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .muted {
+  left: 38%;
+  opacity: 0;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .noMuted {
+  left: 38%;
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .muted_active {
+  opacity: 1;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .muteBtn .noMuted_active {
+  opacity: 0;
+}
+.recherche .affichageRecherche .carrousel_genre_container .hoverInfo .hoverInfo_video .avengersEndgame_ba {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 108%;
+  height: 135%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer {

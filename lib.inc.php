@@ -213,7 +213,7 @@ function couvertureMovie($co)
         echo ' <h2>' . $valueCouverture['movie_titre_2'] . '</h2>';
         echo '<div class="interaction">';
         echo ' <a class="play" href="">PLAY</a>';
-        echo ' <a href="">TEASER</a>';
+        echo ' <a href="teaser.php">TEASER</a>';
         echo '<a href="list_ajout.php?id=' . $valueCouverture['id'] . '">+ ADD LIST</a>';
         echo '</div>';
         echo '<h3>Genre : ' . $valueCouverture['movie_genre'] . '</h3>';
@@ -1070,7 +1070,7 @@ function myList($co)
         echo '<p class="age">Age : <span>' . $values['movie_age'] . '</span></p>';
         echo '<div class="interaction">';
         echo '<button class="btnIteraction play">PLAY</button>';
-        echo '<button class="btnIteraction teaser">TEASER</button>';
+        echo '<a href="teaser.php?id=' . $values['id'] . '" class="btnIteraction teaser">TEASER</a>';
         echo '</div>';
         echo '<h3 class="genre">Genre : ' . $values['movie_genre'] . '</h3>';
         echo '<p class="descr">' . $values['movie_descr'] . '</p>';
@@ -1083,4 +1083,78 @@ function myList($co)
 
 function teaser($co)
 {
+    $id = $_GET['id'];
+    $req = "SELECT * FROM `imovix_movies` WHERE id=$id;";
+    try {
+        $resultat = $co->query($req);
+    } catch (PDOException $e) {
+        print 'Erreur : ' . $e->getMessage() . '<br />';
+    }
+
+    foreach ($resultat as $values) {
+        echo '<div class="container_video">';
+        echo '<h1 class="container_video_titre"><span>' . $values['movie_titre'] . '</span>' . $values['movie_titre_2'] . '</h1>';
+        echo '<video class="teaser_ba" autoplay loop controls muted>';
+        echo '<source src="./video/' . $values['movie_ba'] . '" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
+        echo '<div class="interaction">';
+        echo '<a href="">RETOUR</a>';
+        echo '<a class="play" href="">PLAY</a>';
+        echo '<a href="">+ ADD LIST</a>';
+        echo '</div>';
+    }
+}
+
+
+function recherche($co)
+{
+
+    $req = 'SELECT * FROM imovix_movies ORDER BY RAND();';
+
+    $resultat = $co->query($req);
+    foreach ($resultat as $value) {
+        echo '<div class="carrousel_genre_container">';
+
+        echo '<div class="carrousel_affiche">';
+        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+
+        echo '<span class="carrousel_affiche_hover">';
+
+        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+        echo '<div class="interaction">';
+        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+        echo '</div>';
+
+        echo '</span>';
+
+        echo '</div>';
+
+
+
+
+        echo '<div class="hoverInfo">';
+
+        echo '<div class="hoverInfo_descr">';
+        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+        echo '<p>' . $value['movie_descr'] . '</p>';
+        echo '</div>';
+
+        echo '<div class="hoverInfo_video">';
+        echo '<a class="muteBtn">';
+        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+        echo '</a>';
+        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
+        echo '</video>';
+        echo '</div>';
+
+        echo '</div>';
+        echo '</div>';
+    }
 }
