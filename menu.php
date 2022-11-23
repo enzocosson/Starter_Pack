@@ -2,7 +2,7 @@
 require 'lib.inc.php';
 ?>
 
-<header>
+<header class="header">
     <ul class="menu">
         <li class="link logo"><a href="home.php">iMovix</a></li>
         <div class="container_link">

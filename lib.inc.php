@@ -1111,50 +1111,102 @@ function teaser($co)
 function recherche($co)
 {
 
-    $req = 'SELECT * FROM imovix_movies ORDER BY RAND();';
+    $search = $_SESSION['search'];
 
-    $resultat = $co->query($req);
-    foreach ($resultat as $value) {
-        echo '<div class="carrousel_genre_container">';
+    if (!isset($_SESSION['search']) && empty($_SESSION['search'])) {
+        $req = 'SELECT * FROM imovix_movies ORDER BY RAND();';
 
-        echo '<div class="carrousel_affiche">';
-        echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
+        $resultat = $co->query($req);
+        foreach ($resultat as $value) {
+            echo '<div class="carrousel_genre_container">';
 
-        echo '<span class="carrousel_affiche_hover">';
+            echo '<div class="carrousel_affiche">';
+            echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value['movie_affiche'] . '" alt="">';
 
-        echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+            echo '<span class="carrousel_affiche_hover">';
 
-        echo '<div class="interaction">';
-        echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
-        echo '</div>';
+            echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
 
-        echo '</span>';
+            echo '<div class="interaction">';
+            echo '<a class="more" href="list_ajout.php?id=' . $value['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+            echo '</div>';
 
-        echo '</div>';
+            echo '</span>';
+
+            echo '</div>';
 
 
 
 
-        echo '<div class="hoverInfo">';
+            echo '<div class="hoverInfo">';
 
-        echo '<div class="hoverInfo_descr">';
-        echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
-        echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
-        echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
-        echo '<p>' . $value['movie_descr'] . '</p>';
-        echo '</div>';
+            echo '<div class="hoverInfo_descr">';
+            echo '<h1>' . $value['movie_titre'] . ' : ' . $value['movie_titre_2'] . '</h1>';
+            echo '<h2><span>Genre : </span>' . $value['movie_genre'] . '</h2>';
+            echo '<h2><span>Distribution : </span>' . $value['movie_distrib'] . '</h2>';
+            echo '<p>' . $value['movie_descr'] . '</p>';
+            echo '</div>';
 
-        echo '<div class="hoverInfo_video">';
-        echo '<a class="muteBtn">';
-        echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
-        echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
-        echo '</a>';
-        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
-        echo '</video>';
-        echo '</div>';
+            echo '<div class="hoverInfo_video">';
+            echo '<a class="muteBtn">';
+            echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+            echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+            echo '</a>';
+            echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+            echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
+            echo '</video>';
+            echo '</div>';
 
-        echo '</div>';
-        echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+
+        $req2 = "SELECT * FROM imovix_movies WHERE movie_titre LIKE '%$search%'";
+
+        $resultat2 = $co->query($req2);
+        foreach ($resultat2 as $value2) {
+            echo '<div class="carrousel_genre_container">';
+
+            echo '<div class="carrousel_affiche">';
+            echo '<img class="carrousel_affiche_img" src="./img/affiche/' . $value2['movie_affiche'] . '" alt="">';
+
+            echo '<span class="carrousel_affiche_hover">';
+
+            echo '<a class="play" href=""><img class="arrow" src="./img/picto/playArrow.svg" alt=""></a>';
+
+            echo '<div class="interaction">';
+            echo '<a class="more" href="list_ajout.php?id=' . $value2['id'] . '"> <img class="plus" src="./img/picto/+.svg" alt=""> <img class="plus_black" src="./img/picto/+_black.svg" alt=""></a>';
+            echo '</div>';
+
+            echo '</span>';
+
+            echo '</div>';
+
+
+
+
+            echo '<div class="hoverInfo">';
+
+            echo '<div class="hoverInfo_descr">';
+            echo '<h1>' . $value2['movie_titre'] . ' : ' . $value2['movie_titre_2'] . '</h1>';
+            echo '<h2><span>Genre : </span>' . $value2['movie_genre'] . '</h2>';
+            echo '<h2><span>Distribution : </span>' . $value2['movie_distrib'] . '</h2>';
+            echo '<p>' . $value2['movie_descr'] . '</p>';
+            echo '</div>';
+
+            echo '<div class="hoverInfo_video">';
+            echo '<a class="muteBtn">';
+            echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
+            echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
+            echo '</a>';
+            echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+            echo '<source src="./video/' . $value2['movie_ba'] . '" type="video/mp4">';
+            echo '</video>';
+            echo '</div>';
+
+            echo '</div>';
+            echo '</div>';
+        }
     }
 }

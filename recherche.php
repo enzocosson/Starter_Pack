@@ -8,7 +8,7 @@ require 'menu.php';
 
     <form action="recherche_verif.php" method="get">
         <h1><span>Recherchez </span>le film de votre choix</h1>
-        <input class="search" type="search" placeholder="Votre film">
+        <input class="search" type="search" name="search" id="search" placeholder="Votre film">
         <input class="submit" type="submit" value="Rechercher">
     </form>
 
