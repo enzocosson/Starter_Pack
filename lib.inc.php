@@ -1210,3 +1210,23 @@ function recherche($co)
         }
     }
 }
+
+
+
+function genererDatalistAuteurs($co)
+{
+    // on sélectionne le nom et prénom de tous les auteurs de la table auteurs
+    $req = "SELECT movie_titre FROM imovix_movies";
+    echo $req;
+    try {
+        $resultat = $co->query($req);
+    } catch (PDOException $e) {
+        // s'il y a une erreur, on l'affiche
+        echo '<p>Erreur : ' . $e->getMessage() . '</p>';
+        die();
+    }
+    // pour chaque auteur, on met son nom et prénom dans une balise <option>
+    foreach ($resultat as $value) {
+        echo '<option value="' . $value['movie_titre'] . '">';
+    }
+}
