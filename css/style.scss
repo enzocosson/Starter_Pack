@@ -1460,7 +1460,8 @@ header {
 
   .interstellar_ba {
     object-fit: cover;
-    width: 100%;
+    width: 126%;
+
     height: 135vh;
     position: absolute;
     top: 50%;
@@ -2026,13 +2027,13 @@ header {
               }
             }
 
-            .avengersEndgame_ba {
+            .iframe_ba {
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              width: 108%;
-              height: 135%;
+              width: 100%;
+              height: 220%;
               object-fit: cover;
             }
           }
@@ -3156,13 +3157,13 @@ header {
             }
           }
 
-          .avengersEndgame_ba {
+          .iframe_ba {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 108%;
-            height: 135%;
+            width: 100%;
+            height: 220%;
             object-fit: cover;
           }
         }

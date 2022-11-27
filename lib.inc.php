@@ -203,9 +203,9 @@ function couvertureMovie($co)
     $req = 'SELECT * FROM imovix_movies ORDER BY RAND() LIMIT 1;';
     $resultatCouverture = $co->query($req);
     foreach ($resultatCouverture as $valueCouverture) {
-        echo '<video class="interstellar_ba" controls autoplay loop muted>';
-        echo '<source src="./video/' . $valueCouverture['movie_ba'] . '" type="video/mp4">';
-        echo '</video>';
+
+        echo '<iframe class="interstellar_ba" width="560" height="315" src="https://www.youtube.com/embed/' . $valueCouverture['movie_ba'] . '?rel=0&autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
         echo '<img class="illu_conv" src="./img/illustration/' . $valueCouverture['movie_illu'] . '">';
         echo '<div class="couverture_info">';
         echo '<div class="description">';
@@ -279,9 +279,10 @@ function afficherMoviesTendance($co)
         echo '<img class="noMuted" src="./img/picto/noMuted.svg" alt="">';
         echo '<img class="muted" src="./img/picto/Muted.svg" alt="">';
         echo '</a>';
-        echo '<video class="avengersEndgame_ba" autoplay loop muted>';
-        echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
-        echo '</video>';
+        // echo '<video class="avengersEndgame_ba" autoplay loop muted>';
+        // echo '<source src="./video/' . $value['movie_ba'] . '" type="video/mp4">';
+        // echo '</video>';
+        echo '<iframe class="iframe_ba" width="560" height="315" src="https://www.youtube.com/embed/' . $value['movie_ba'] . '?rel=0&autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
         echo '</div>';
 
         echo '</div>';
